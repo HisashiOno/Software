@@ -1,0 +1,97 @@
+import random
+import time
+
+def LeerTemperatura():
+    temperatura = random.uniform(10, 30)
+    return temperatura
+
+def Menu():
+    while True:
+        temperatura = LeerTemperatura()
+        print(f'Temperatura: {temperatura:.2f}°C')
+        time.sleep(5) 
+
+if __name__ == "__main__":
+    Menu()
+
+
+import random
+import time
+
+class SensorTemperatura:
+    def __init__(self):
+        self.encendido = False
+        self.estado = "Buen estado"
+
+    def Encender(self):
+        self.encendido = True
+        print("El sensor de temperatura se ha encendido.")
+
+    def Apagar(self):
+        self.encendido = False
+        print("El sensor de temperatura se ha apagado.")
+
+    def VerificarEstado(self):
+        if self.encendido:
+            print("El sensor de temperatura está encendido.")
+        else:
+            print("El sensor de temperatura está apagado.")
+        print(f"Estado del sensor: {self.estado}")
+
+
+def SimularControlRemoto():
+    sensor = SensorTemperatura()
+
+    while True:
+        print("\nControl Remoto para Sensor de Temperatura")
+        print("1. Encender sensor")
+        print("2. Apagar sensor")
+        print("3. Verificar estado del sensor")
+        print("4. Salir")
+
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            sensor.Encender()
+        elif opcion == "2":
+            sensor.Apagar()
+        elif opcion == "3":
+            sensor.VerificarEstado()
+        elif opcion == "4":
+            print("Saliendo del control remoto.")
+            break
+        else:
+            print("Opción no válida. Inténtalo de nuevo.")
+
+def main():
+    SimularControlRemoto()
+
+if __name__ == "__main__":
+    main()
+
+
+
+    import time
+
+def Temporizador(horas, minutos, segundos):
+    tiempoTotal = horas * 3600 + minutos * 60 + segundos
+    print(f"Temporizador iniciado por {horas} horas, {minutos} minutos y {segundos} segundos.")
+    time.sleep(tiempoTotal)
+    print("¡Tiempo completado!")
+
+def Menu():
+    print("Bienvenido al temporizador.")
+    horas = int(input("Ingresa las horas: "))
+    minutos = int(input("Ingresa los minutos: "))
+    segundos = int(input("Ingresa los segundos: "))
+    Temporizador(horas, minutos, segundos)
+
+if __name__ == "__main__":
+    Menu()
+
+
+
+
+
+
+    
